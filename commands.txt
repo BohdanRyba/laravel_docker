@@ -1,0 +1,33 @@
+//common commandssh
+docker-up:
+    docker-compose up -d
+
+docker-down:
+    docker-compose down
+
+docker-build:
+    docker-compose up --build -d
+
+assets-install:
+    docker exec app_node_1 yarn install
+
+assets-install:
+    docker exec app_node_1 yarn run dev
+
+assets-install:
+    docker exec app_node_1 yarn run watch
+
+test:
+    docker exec app_php-cli_1 vendor/bin/phpunit --colors=always
+perm:
+    sudo chown ${USER}:${USER} bootstrap/cache -R
+    sudo chown ${USER}:${USER} storage -R
+
+//image names
+
+dockerlaravel_mysql_1
+dockerlaravel_redis_1
+dockerlaravel_php-cli_1
+dockerlaravel_php-fpm_1
+dockerlaravel_nginx_1
+dockerlaravel_node_1
